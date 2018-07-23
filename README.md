@@ -29,6 +29,9 @@ Database: Mongodb
     D: remove
 
 ********Intro to Mongoose Part 2 (27,267)
+        Review as per notes
+
+
 
     
 
