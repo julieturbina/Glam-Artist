@@ -50,21 +50,9 @@ hbs.registerPartials(__dirname + '/views/partials');
 // ============services ========== 
 
 const services = [
-  {
-    'name': 'Botox Injections', 
-    'provider': 'Jules', 
-    'photo': '../images/botox.png'
-    },
-    {
-      'name': 'Vampire Facials', 
-      'provider': 'Jules', 
-      'photo': '../images/vampire-facial-facelift.jpg'
-      },
-      {
-        'name': 'Facials', 
-        'provider': 'Jules', 
-        'photo': '../images/facials.jpg'
-        },
+  {name: 'Botox Injections', provider: 'Jules', photo: '../images/botox.png'},
+  {name: 'Vampire Facials', provider: 'Jules', photo: '../images/vampire-facial-facelift.jpg'},
+  {name: 'Facials', provider: 'Jules', photo: '../images/facials.jpg'},
 ];
 
 
@@ -81,12 +69,12 @@ app.get('/services', (req, res, next) => {
   res.render("services", {services:services}); 
 });
 
-app.post("/services", (req, res, next) => {
+app.post("/services", (req, res) =>{
   //get data from form and add to services array
-  const name = req.body.name;
-  const provider = req.body.provider;
-  const photo = req.body.photo;
-  const newServices = {name:name, provider:provider, photo:photo};
+  var name = req.body.name;
+  var provider = req.body.provider;
+  var photo = req.body.photo;
+  var newServices = {name:name, provider:provider, photo:photo};
   services.push(newServices);
   //redirect back to services page
   res.redirect("/services");
@@ -95,6 +83,8 @@ app.post("/services", (req, res, next) => {
 app.get("/services/new", (req, res) => {
   res.render("newServices");
 });
+
+
 
 //Get fashion page===
 app.get('/fashion', (req, res, next) => {

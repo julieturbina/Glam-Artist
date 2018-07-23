@@ -17,8 +17,20 @@ Add Makeup Page
 Create partials folder
      Connect page to partial page to push procedure list.
 
-********Creating Services: create new Procedures/Services
+********Creating Services: create new Procedures/Services(26, 258)
 ********Review = test failed
+
+********Use bootstrap for styling (26, 259)
+
+Database: Mongodb
+    C: insert
+    R: find
+    U: update
+    D: remove
+
+********Intro to Mongoose Part 2 (27,267)
+
+    
 
 
 
