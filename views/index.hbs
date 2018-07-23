@@ -1,2 +1,55 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<!-- index.hbs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+ <h1>Welcome to Glam Artist</h1>
+ <div>
+ <button><a href="/services">View Cosmetic Procedures</a></button>
+ </div>
+ <div>
+ <button><a href="/fashion">View fashion</a></button>
+ </div>
+ <div>
+ <button><a href="/makeup">Makeup Artist</a></button>
+ </div>
+
+    <div class="cards-container">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../images/36943-28419-injectionjpgjpg.jpg.660x0_q80_crop-scale_upscale.jpg">
+        <div class="card-body">
+            <h5 class="card-title">Procedures</p>
+            <a href="/services" class="btn btn-primary">See Providers </a>
+        </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../images/runway1.jpg"
+            {{!-- alt="Card image cap"> --}}
+        <div class="card-body">
+            <h5 class="card-title">Fashion</h5>
+            <p class="card-text">Fashion Designer.</p>
+            <a href="/fashion" class="btn btn-primary">See desingners</a>       
+        </div>
+        </div>
+
+        <div class="cards-container">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../images/make-up2.jpg">
+        <div class="card-body">
+            <h5 class="card-title">Makeup</h5>
+            <p class="card-text">Glam Atists.</p>
+            <a href="/makeup" class="btn btn-primary">Makeup Artist</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

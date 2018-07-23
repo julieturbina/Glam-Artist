@@ -1,0 +1,25 @@
+<!-- services.hbs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Services</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+  {{!-- <div class="container"> --}}
+    <header class="jumbotron">
+      <h1>Cosmetic Procedures</h1>
+      <a class="btn btn-primary btn-large" href="/services/new">Add new procedures</a>
+
+    </header>
+  {{!-- </div> --}}
+    <div class="cards-container">
+      {{!-- {{#each serviceCard}} --}}
+      {{!-- {{> servicesCard this}} --}}
+      {{!-- {{/each}} --}}
+    {{> servicesCard}}
+    </div>
+</body>
+</html>
