@@ -1,3 +1,5 @@
+Index page
+
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 <!-- index.hbs -->
@@ -6,11 +8,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Home</title>
+  <title>Glam Artist>
   <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 <body>
- <h1>Welcome to Glam Artist</h1>
+ <h1>Index Page</h1>
  <div>
  <button><a href="/services">View Cosmetic Procedures</a></button>
  </div>
@@ -19,6 +21,20 @@
  </div>
  <div>
  <button><a href="/makeup">Makeup Artist</a></button>
+ </div>
+
+ <div>
+      <h1>Hello {{{userName}}}!</h1>
+      <h2>Welcome to the {{{bootcamp}}}!!</h2>
+
+    {{#each cities}}
+      <li>{{this}}</li>
+    {{else}}
+      <p>Available worlwide in less than 1 year!</p>
+    {{/each}}
+
+</div>
+
  </div>
 
     <div class="cards-container">

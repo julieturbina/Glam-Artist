@@ -1,0 +1,15 @@
+<form action="/services/edit?services_id={{services._id}}" method="post">
+  <label for="">Procedure:</label>
+  <input type="text" name="title" value="{{services.name}}">
+
+  <label for="">Provider:</label>
+  <input type="text" name="provider" value="{{book.provider}}">
+
+  <label for="">Description:</label>
+  <input type="text" name="description" value="{{services.description}}">
+
+  <label for="">Rate:</label>
+  <input type="number" name="rating" value="{{services.rating}}">
+
+  <button type="submit">EDIT</button>
+</form>

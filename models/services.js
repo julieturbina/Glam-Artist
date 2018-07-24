@@ -1,10 +1,18 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
 
 const servicesSchema = new Schema({
-  name: String,
-  provider: String,
-  image: String
+  name: "String",
+  image: "String",
+  provider: {
+    firstName: "String",
+    lastName: "String",
+    education: "String",
+    experience: "String",
+    pictureUrl: "String",
+    phone: Number
+  }
 }, {
   timestamps: {
     createdAt: "created_at",

@@ -3,9 +3,8 @@
 
 
 
-<!-- services.hbs -->
-
-<!DOCTYPE html>
+<!-- services.hbs --> 
+{{!-- <!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="utf-8">
@@ -18,11 +17,12 @@
       <header class="jumbotron">
         <h1>Cosmetic Procedures</h1>
         <a class="btn btn-primary btn-large" href="/services/new">Add new procedures</a>
-      </header>
+      </header> --}}
 
       <div>
            {{#each services}}
-                <p><a href="services/{{this._id}}">{{this.title}}</a></p>
+                <p><a href="service/{{this._id}}">{{this.name}}</a></p>
+                 <a href="/services/edit?services_id={{this._id}}" class="edit-button">Explore</a>
             {{/each}}
            We are displaying all available services!
       </div>
