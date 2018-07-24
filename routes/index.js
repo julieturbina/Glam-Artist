@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const Services = require('../models/services.js');
 const Provider = require('../models/provider.js');
+// const Review   = require('../models/review.js');
 const User     = require('../models/user');
 // const cloudinary = require('cloudinary');
 
@@ -79,12 +80,17 @@ router.get('/services/:id', (req, res, next) => {
       console.log(error);
     });
   });
+
+//   {{#each services}}
+//   <p><a href="service/{{this._id}}">{{this.name}}</a></p>
+//    <a href="/services/edit?services_id={{this._id}}" class="edit-button">Explore</a>
+// {{/each}}
   
   router.post('/services/edit', (req, res, next) => {
     const { name, provider, photo } = req.body;
     Services.update({_id: req.query.services_id}, { $set: {name, provider, photo }}, { new: true })
     .then((services) => {
-      res.redirect('/services');
+      res.redirect('/services-update');
     })
     .catch((error) => {
       console.log(error);
@@ -105,6 +111,10 @@ router.get('/services/:id', (req, res, next) => {
     .catch((error) => {
       console.log(error);
     });
+  });
+
+  router.get('/review/add', (req, res, next) => {
+    res.render("services-review");
   });
   
   router.post('/reviews/add', (req, res, next) => {

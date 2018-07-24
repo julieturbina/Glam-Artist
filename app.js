@@ -10,6 +10,7 @@ const logger       = require('morgan');
 const path         = require('path');
 const Services = require('./models/services.js');
 const Provider = require('./models/provider.js');
+// const Review   = require('../models/review.js');
 const User     = require('./models/user');
 // const cloudinary = require('cloudinary');
 
@@ -217,6 +218,25 @@ app.get('/makeup', (req, res, next) => {
   res.render('makeup');
 });
 
+//Get Services ID
+app.get('/services-update', (req, res, next) => {
+  res.render('services-update');
+});
+
+//Get Services Add
+app.get('/services-add', (req, res, next) => {
+  res.render('services-add');
+});
+
+//Get Services Detail
+app.get('/services-review', (req, res, next) => {
+  res.render('services-review');
+});
+
+//Get Services Provider Add
+app.get('/provider-add', (req, res, next) => {
+  res.render('provider-add');
+});
 /*
 //To NOT add the layout to he home page===
 

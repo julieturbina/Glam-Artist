@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Services = require('../models/services');
 const Provider = require('../models/provider');
+// const Review   = require('../models/review.js');
 const User     = require('../models/user');
 
 const dbtitle = 'glam-artist';
@@ -11,60 +12,70 @@ const services = [
     name: "Botox Injections",
     pictureUrl: "../images/botox.png",
     provider: [ "Heidi Schuler"],
+    review: "Fantastic experience.",
   },
   {
     name: " Dermal Fillers",
     pictureUrl: "../images/36943-28419-injectionjpgjpg.jpg.660x0_q80_crop-scale_upscale.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Great experience.",
   },
   {
     name: "Vampire Facial",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Amazing.",
   },
   {
     name: "Dermabrasion",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Wonderful.",
   },
   {
     name: "Permanent Makeup",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Eyelash Extensions",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Microblading Eyebrow Tattoo",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Juvederm Filler",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Restylane Fillers",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Sculptra Fillers",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
   {
     name: "Liquid Facelift",
     pictureUrl: "../images/facials-1.jpg",
     provider: [ "Juliet Urbina"],
+    review: "Fantastic experience.",
   },
 
 ];
-
 
 Services.create(services, (err) => {
   if (err) { throw(err); }
@@ -117,7 +128,12 @@ const saveServices = findProvider.then(findProviders => {
 
 
 // Services.create(services, (err) => {
-//   if (err) { throw(err); }
+//   if (err) { throw(err); }iew
 //   console.log(`Created ${services.length} services`);
+//   mongoose.connection.close();
+// });
+// Review.create(review, (err) => {
+//   if (err) { throw(err); }
+//   console.log(`Created ${review.length} review`);
 //   mongoose.connection.close();
 // });

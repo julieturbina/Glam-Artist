@@ -1,3 +1,6 @@
+<h2>Reviews</h2>
+<p>Add a review</p>
+
 <h1>{{services.name}}</h1>
 {{#each services.provider}}
 <div class="review-item">
@@ -7,9 +10,10 @@
 {{/each}}
 <p>{{services.description}}</p>
 
-<a href="/services">Return</a>
 
-<p>Add a review</p>
+<button><a href="/services">Return</a></button>
+
+
 <form action="/reviews/add?services_id={{services._id}}" method="post">
   <label for="">User:</label>
   <input type="text" name="user">

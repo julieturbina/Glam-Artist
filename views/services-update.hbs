@@ -1,15 +1,21 @@
-<form action="/services/edit?services_id={{services._id}}" method="post">
+ {{!-- {{#each services}} --}}
+                {{!-- <p><a href="service/{{this._id}}">{{this.name}}</a></p>
+                 <a href="/services/edit?services_id={{this._id}}" class="edit-button">Explore</a>
+            {{/each}}
+<form action="/services/edit?services_id={{services._id}}" method="post"></form> --}}
+<h1>Update/Edit Services Provided</h1>
+
+<form action="/services/edit?services_id={{this._id}}" method="POST">
   <label for="">Procedure:</label>
-  <input type="text" name="title" value="{{services.name}}">
+  <input type="text" name="title" value="{{this.name}}">
 
   <label for="">Provider:</label>
-  <input type="text" name="provider" value="{{book.provider}}">
+  <input type="text" name="provider" value="{{services.provider}}">
 
-  <label for="">Description:</label>
-  <input type="text" name="description" value="{{services.description}}">
 
-  <label for="">Rate:</label>
-  <input type="number" name="rating" value="{{services.rating}}">
-
-  <button type="submit">EDIT</button>
+  <label for="">Image:</label>
+  <input type="number" name="rating" value="{{services.pictureUrl}}">
+    <div>
+    <button>Submit</button>
+    </div>
 </form>
