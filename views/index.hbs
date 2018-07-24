@@ -3,47 +3,60 @@
 
 {{!-- <h1>{{title}}</h1> --}}
 <h1>Welcome to {{title}}</h1>
-
-  <button><a href="/services">View Cosmetic Procedures</a></button>
-        </div>
         <div>
-        <button><a href="/fashion">View fashion</a></button>
+        <button class="login"><a href="/login">Login</a></button>
         </div>
+        <br>
         <div>
-        <button><a href="/makeup">Makeup Artist</a></button>
+        <button class="login"><a href="/login">Signup</a></button>
         </div>
+        <hr>
+        <div>
+        <button class="edit-button"><a href="/services">View Cosmetic Procedures</a></button>
+        </div>
+        <br>
+        <div>
+        <button class="edit-button"><a href="/fashion">View fashion</a></button>
+        </div>
+         <br>
+        <div>
+        <button class="edit-button"><a href="/makeup">Makeup Artist</a></button>
+        </div>
+         <br>
 
 
- </div>
+
 
     <div class="cards-container">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="../images/36943-28419-injectionjpgjpg.jpg.660x0_q80_crop-scale_upscale.jpg">
         <div class="card-body">
-            <h5 class="card-title">Procedures</p>
-            <p class="card-text">Cosmetic Dermatology.</p>
-            <a href="/services" class="btn btn-primary">See Providers </a>
+            <h4 class="card-title">Cosmetic Procedures</h4>
+            {{!-- <p class="card-text">Cosmetic Dermatology.</p> --}}
+            <a href="/services" class="btn btn-primary">Procedures</a>
         </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/runway1.jpg"
-            {{!-- alt="Card image cap"> --}}
-        <div class="card-body">
-            <h5 class="card-title">Fashion</h5>
-            <p class="card-text">Fashion Designer.</p>
-            <a href="/fashion" class="btn btn-primary">See desingners</a>       
-        </div>
-        </div>
-
-        <div class="cards-container">
-        <div class="card" style="width: 18rem;">
+         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="../images/make-up2.jpg">
         <div class="card-body">
-            <h5 class="card-title">Makeup</h5>
-            <p class="card-text">Glam Atists.</p>
+            <h4 class="card-title">Makeup Artist</h4>
+            {{!-- <p class="card-text">Makeup Atists.</p> --}}
             <a href="/makeup" class="btn btn-primary">Makeup Artist</a>
         </div>
+        </div>
+
+           {{!-- <div class="cards-container"> --}}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../images/runway1.jpg">
+        <div class="card-body">
+            <h4 class="card-title">Fashion Designer</h4>
+            {{!-- <p class="card-text">Makeup Atists.</p> --}}
+            <a href="/makeup" class="btn btn-primary">Fashion</a>
+        </div>
+        </div>
+             {{!-- <div class="cards-container"> --}}
+       
 
  <div>
       {{!-- <h1>Hello {{{userName}}}!</h1>
