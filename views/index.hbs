@@ -1,39 +1,18 @@
-Index page
 
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<!-- index.hbs -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Glam Artist>
-  <link rel="stylesheet" href="stylesheets/styles.css">
-</head>
-<body>
- <h1>Index Page</h1>
- <div>
- <button><a href="/services">View Cosmetic Procedures</a></button>
- </div>
- <div>
- <button><a href="/fashion">View fashion</a></button>
- </div>
- <div>
- <button><a href="/makeup">Makeup Artist</a></button>
- </div>
 
- <div>
-      <h1>Hello {{{userName}}}!</h1>
-      <h2>Welcome to the {{{bootcamp}}}!!</h2>
+{{!-- <h1>{{title}}</h1> --}}
+<h1>Welcome to {{title}}</h1>
 
-    {{#each cities}}
-      <li>{{this}}</li>
-    {{else}}
-      <p>Available worlwide in less than 1 year!</p>
-    {{/each}}
+  <button><a href="/services">View Cosmetic Procedures</a></button>
+        </div>
+        <div>
+        <button><a href="/fashion">View fashion</a></button>
+        </div>
+        <div>
+        <button><a href="/makeup">Makeup Artist</a></button>
+        </div>
 
-</div>
 
  </div>
 
@@ -42,6 +21,7 @@ Index page
             <img class="card-img-top" src="../images/36943-28419-injectionjpgjpg.jpg.660x0_q80_crop-scale_upscale.jpg">
         <div class="card-body">
             <h5 class="card-title">Procedures</p>
+            <p class="card-text">Cosmetic Dermatology.</p>
             <a href="/services" class="btn btn-primary">See Providers </a>
         </div>
         </div>
@@ -64,8 +44,15 @@ Index page
             <p class="card-text">Glam Atists.</p>
             <a href="/makeup" class="btn btn-primary">Makeup Artist</a>
         </div>
-    </div>
+
+ <div>
+      <h1>Hello {{{userName}}}!</h1>
+      <h2>Welcome to the {{{bootcamp}}}!!</h2>
+
+    {{#each cities}}
+      <li>{{this}}</li>
+    {{else}}
+      <p>Available worlwide in less than 1 year!</p>
+    {{/each}} 
 
 
-</body>
-</html>
