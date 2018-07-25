@@ -5,14 +5,15 @@ const ObjectId = Schema.ObjectId;
 const servicesSchema = new Schema({
   name: "String",
   image: "String",
-  provider: {
-    firstName: "String",
-    lastName: "String",
-    education: "String",
-    experience: "String",
-    pictureUrl: "String",
-    phone: Number
-  }
+  provider: "String",
+  // {
+  //   firstName: "String",
+  //   lastName: "String",
+  //   education: "String",
+  //   experience: "String",
+  //   pictureUrl: "String",
+  //   phone: Number
+  // }
 }, {
   timestamps: {
     createdAt: "created_at",

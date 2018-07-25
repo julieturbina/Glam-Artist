@@ -10,7 +10,7 @@ mongoose.connect(`mongodb://localhost/${dbtitle}`);
 const services = [
   {
     name: "Botox Injections",
-    pictureUrl: "../images/botox.png",
+    image: "../images/botox.png",
     provider: [ "Heidi Schuler"],
     review: "Fantastic experience.",
   },
@@ -22,7 +22,7 @@ const services = [
   },
   {
     name: "Vampire Facial",
-    pictureUrl: "../images/facials-1.jpg",
+    image: "../images/vampire-facial-facelift.jpg",
     provider: [ "Juliet Urbina"],
     review: "Amazing.",
   },

@@ -19,29 +19,11 @@ authRoutes.get("/auth/facebook/callback", passport.authenticate("facebook", {
   failureRedirect: "/"
 }));
 
-//Logout route
 
-authRoutes.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/login");
-});
-
-
+// Signup Route ===
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
-
-// authRoutes.get("/login", (req, res, next) => {
-//   res.render("auth/login", { "message": req.flash("error") });
-// });
-
-
-// authRoutes.post("/login", passport.authenticate("local", {
-//   successRedirect: "/",
-//   failureRedirect: "/login",
-//   failureFlash: true,
-//   passReqToCallback: true
-// }));
 
 authRoutes.post("/signup", (req, res, next) => {
     const username = req.body.username;
@@ -81,6 +63,7 @@ authRoutes.post("/signup", (req, res, next) => {
   });
 });
  
+//Login Route ===
 
 authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
@@ -88,7 +71,7 @@ authRoutes.get("/login", (req, res, next) => {
 
 authRoutes.post("/login", passport.authenticate("local", 
 {
-  successRedirect: "/",
+  successRedirect: "/private",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
@@ -125,15 +108,50 @@ authRoutes.post("/login", (req, res, next) => {
         res.render("private", { user: req.user });
       });
 
+      //Logout Route
+     
+
+      // authRoutes.get("/logout", (req, res) => {
+      //   req.logout();
+      //   res.redirect("/index");
+      // });
+
       authRoutes.get("/logout", (req, res) => {
         req.logout();
         res.redirect("/login");
       });
 
-      authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-        res.render("private", { user: req.user });
+      authRoutes.get("/logout", (req, res) => {
+        res.render("index");
       });
+      // authRoutes.post("/logout", passport.authenticate("local", 
+      // {
+      //   successRedirect: "/private",
+      //   failureRedirect: "/login",
+      //   failureFlash: true,
+      //   passReqToCallback: true
+      // }));
+
+
+
+      // authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+      //   res.render("private", { user: req.user });
+      // });
   });
 });
 
 module.exports = authRoutes;
+
+
+
+// authRoutes.get("/login", (req, res, next) => {
+//   res.render("auth/login", { "message": req.flash("error") });
+// });
+
+
+// authRoutes.post("/login", passport.authenticate("local", {
+//   successRedirect: "/",
+//   failureRedirect: "/login",
+//   failureFlash: true,
+//   passReqToCallback: true
+// }));

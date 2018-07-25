@@ -1,0 +1,78 @@
+<br>
+<header>
+      <header>
+      <a class="btn btn-primary btn-large" href="/logout">Logout</a>
+
+
+<br> 
+
+<h1>Add New Provider</h1>
+{{!-- <div class="cards-container"> --}}
+        
+            <form action="/provider/add" method="post">
+            <label for="">First Name:</label>
+            <input type="text" name="firstName">
+
+            <label for="">Last Name:</label>
+            <input type="text" name="lastName">
+
+            <label for="">Education:</label>
+            <input type="text" name="eduation">
+        
+        <div>
+            <label for="">Experience:</label>
+            <input type="text" name="experience">
+
+            <label for="">Picture:</label>
+            <input type="pictureurl" name="pictureUrl">
+        </div>
+            <button class="login">Submit</button>
+            </form>
+</div>
+
+<br>
+<hr>
+
+<div>
+<h1>Add New Procedure</h1>
+{{!-- <div class="cards-container"> --}}
+        <div>
+            <form action-"/services" method="POST">
+            <label for="">Procedure:</label>
+            <input type= "text" name="name" placeholder= "name">
+            <label for="">Provider:</label>
+            <input type= "text" name="provider" placeholder= "provider">
+            <label for="">Image:</label>
+            <input type= "text" name="photo" placeholder= "photo url">
+        </div>    
+            <label for="">Phone:</label>
+            <input type= "number" name="phone" placeholder= "phone">
+        </div>
+                <button class="login">Submit</button>
+        </form>
+</div>
+
+<br>
+<hr>
+
+<div>
+<h1>Update/Edit Services Provided</h1>
+{{!-- <div class="cards-container"> --}}
+        <div>
+            <form action="/services-update?services_id={{this._id}}" method="POST">
+            <label for="">Procedure:</label>
+            <input type="text" name="title" value="{{this.name}}">
+
+            <label for="">Provider:</label>
+            <input type="text" name="provider" value="{{services.provider}}">
+
+            <label for="">Image:</label>
+            <input type="number" name="rating" value="{{services.pictureUrl}}">
+        <div>
+                <button class="login">Submit</button>
+        </div>
+            </form>
+</div>
+
+<br>
+<hr>

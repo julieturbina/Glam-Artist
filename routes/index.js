@@ -58,11 +58,45 @@ router.get('/services/:id', (req, res, next) => {
     .catch(next);
   });
 
+  //ADD SERVICES USING SERVICES-ADD FORM
 
-  router.post('/services/add', (req, res, next) => {
+  router.get('/services/add', (req, res, next) => {
+    Book.findOne({_id: req.query.book_id})
+    .then((services) => {
+      res.render("services-add", {services});
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  });
+
+  router.post('services/add', (req, res, next) => {
     const { name, provider, photo } = req.body;
     const newServices = new Services({ name, provider, photo});
     newServices.save()
+    .then((services) => {
+      res.redirect('services');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  });
+  
+  //EDIT EXISTING SERVICES USING SERVICES-UPDATE FORM
+
+  router.get('/services/edit', (req, res, next) => {
+    Book.findOne({_id: req.query.book_id})
+    .then((services) => {
+      res.render("services-update", {services});
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  });
+  
+  router.post('/services/edit', (req, res, next) => {
+    const { name, provider, photo } = req.body;
+    Services.update({_id: req.query.services_id}, { $set: {name, provider, photo }}, { new: true })
     .then((services) => {
       res.redirect('/services');
     })
@@ -70,32 +104,8 @@ router.get('/services/:id', (req, res, next) => {
       console.log(error);
     });
   });
-  
-  router.get('/services/edit', (req, res, next) => {
-    Book.findOne({_id: req.query.book_id})
-    .then((services) => {
-      res.render("services-edit", {services});
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
 
-//   {{#each services}}
-//   <p><a href="service/{{this._id}}">{{this.name}}</a></p>
-//    <a href="/services/edit?services_id={{this._id}}" class="edit-button">Explore</a>
-// {{/each}}
-  
-  router.post('/services/edit', (req, res, next) => {
-    const { name, provider, photo } = req.body;
-    Services.update({_id: req.query.services_id}, { $set: {name, provider, photo }}, { new: true })
-    .then((services) => {
-      res.redirect('/services-update');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
+  //ADD PROVIDER USING PROVIDER-ADD FORM ======(tested=working)======
   
   router.get('/provider/add', (req, res, next) => {
     res.render("provider-add");
@@ -106,7 +116,7 @@ router.get('/services/:id', (req, res, next) => {
     const newProvider = new Provider({ firstame, lastName, education, experience, pictureUrl});
     newProvider.save()
     .then((services) => {
-      res.redirect('/services');
+      res.redirect('/private');
     })
     .catch((error) => {
       console.log(error);

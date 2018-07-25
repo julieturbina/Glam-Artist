@@ -11,21 +11,33 @@
       <title>Services</title>
       <link rel="stylesheet" href="stylesheets/styles.css">
   </head>
+  --}}
+  <br>
 
   <body>
-    {{!-- <div class="container"> --}}
+    <div class="container"> 
       <header class="jumbotron">
         <h1>Cosmetic Procedures</h1>
-        <a class="btn btn-primary btn-large" href="/services/new">Add new procedures</a>
-      </header> --}}
+        <a class="btn btn-primary btn-large" href="/services-add">Add new procedures</a>
+      </header> 
 
-      <div>
+        <div>
            {{#each services}}
-                <p><a href="service/{{this._id}}">{{this.name}}</a></p>
-                 <a href="/services/edit?services_id={{this._id}}" class="edit-button">Explore</a>
+            <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="services/{{this.image}}">
+            <img class="card-img-top" src="services/{{this.pictureUrl}}">
+            
+        </div>
+        <div class="card-body">
+            <h2><a href="service/{{this._id}}">{{this.name}}</a></h2>
+            <a href="/services-update?services_id={{this._id}}" class="edit-button">Edit</a>
             {{/each}}
-           We are displaying all available services!
-      </div>
-    
+        </div>
+    </div>
+ 
+        </div>
+    </div>
+    <br>
+
   </body>
   </html>  

@@ -175,15 +175,6 @@ hbs.registerPartials(__dirname + '/views/partials');
 //   res.render('fashion');
 // });
 
- //Get fashion page===
-// app.get('/fashion', (req, res, next) => {
-//   res.render('fashion');
-// });
-
-//Get makeup page===
-// app.get('/makeup', (req, res, next) => {
-//   res.render('makeup');
-// });
 
  /*
 //Get services page===
@@ -237,6 +228,12 @@ app.get('/services-review', (req, res, next) => {
 app.get('/provider-add', (req, res, next) => {
   res.render('provider-add');
 });
+
+//Get Services Provider Add
+app.get('/private', (req, res, next) => {
+  res.render('private');
+});
+
 /*
 //To NOT add the layout to he home page===
 
