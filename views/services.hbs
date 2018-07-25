@@ -1,43 +1,26 @@
-{{!-- <--books.hbs--> --}}
 
-
-
-
-<!-- services.hbs --> 
-{{!-- <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <title>Services</title>
-      <link rel="stylesheet" href="stylesheets/styles.css">
-  </head>
-  --}}
   <br>
 
   <body>
-    <div class="container"> 
+    <div> 
       <header class="jumbotron">
         <h1>Cosmetic Procedures</h1>
-        <a class="btn btn-primary btn-large" href="/services-add">Add new procedures</a>
+        <a class="btn btn-primary btn-large" href="/provider-info">Provider Information</a>
       </header> 
-
-        <div>
-           {{#each services}}
-            <div class="card" style="width: 15rem;">
-            <img class="card-img-top" src="services/{{this.image}}">
-            <img class="card-img-top" src="services/{{this.pictureUrl}}">
-            
-        </div>
-        <div class="card-body">
-            <h2><a href="service/{{this._id}}">{{this.name}}</a></h2>
-            <a href="/services-update?services_id={{this._id}}" class="edit-button">Edit</a>
-            {{/each}}
-        </div>
     </div>
- 
-        </div>
-    </div>
-    <br>
 
-  </body>
-  </html>  
+
+        {{!-- <div class="cards-container">
+           <div class="row">
+  <div class="col-sm-3"> --}}
+    <div class="card">
+              {{#each services}}
+                    {{!-- <img class="card-img-top" src="../images/facials.jpg" alt "Botox" > --}}
+                <div class="card-body">
+                    <h5 class="card-title"><a href="service/{{this._id}}">{{this.name}}</a></h5>
+                    <p class="card-text"><a href="service/{{this._id}}">{{this.provider}}</a></p>
+                {{/each}}
+            </div>
+            </div>
+        </div>
+

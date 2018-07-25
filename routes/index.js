@@ -6,31 +6,17 @@ const Provider = require('../models/provider.js');
 const User     = require('../models/user');
 // const cloudinary = require('cloudinary');
 
-router.get('/services/add', (req, res, next) => {
-  res.render("services-add");
-});
+
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+// ADD A SERVICE ROUTE ===
 
-
-// router.get('/', (req, res, next) => {
-//   let data = {
-//     userName: "User",
-//     bootcamp: "<span>Socialite</span>"
-//     // cities: ["Miami", "London", "Paris", "Belize", "Dubai", ]
-//   };
-//   res.render('index', data);
-// });
-
-
-
-/* GET service page */
-// router.get('/services', (req, res, next) => {
-//   res.render("services");
-// });
+router.get('/services/add', (req, res, next) => {
+  res.render("services-add");
+});
 
 router.get('/services', (req, res, next) => {
   Services.find()
@@ -69,7 +55,7 @@ router.get('/services/:id', (req, res, next) => {
     const newServices = new Services({ name, provider });
     newServices.save()
     .then((services) => {
-      res.redirect('services');
+      res.redirect('/private');
     })
     .catch((error) => {
       console.log(error);
@@ -80,12 +66,12 @@ router.get('/services/:id', (req, res, next) => {
 
   router.get('/services/edit', (req, res, next) => {
     Book.findOne({_id: req.query.book_id})
-    .then((services) => {
+    // .then((services) => {
       res.render("services-update", {services});
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // });
   });
   
   router.post('/services/edit', (req, res, next) => {
@@ -117,17 +103,17 @@ router.get('/services/:id', (req, res, next) => {
     });
   });
 
+// PROVIDER INFORMATION ===
 
-
-  router.get('/review/add', (req, res, next) => {
-    res.render("services-review");
+  router.get('/provider-info', (req, res, next) => {
+    res.render("provider-info");
   });
   
-  router.post('/reviews/add', (req, res, next) => {
+  router.post('/provider-info', (req, res, next) => {
     const { user, comments } = req.body;
     Services.update({ _id: req.query.services_id }, { $push: { reviews: { user, comments }}})
     .then(services => {
-      res.redirect('/services/' + req.query.services_id);
+      res.redirect('/provider-info/' + req.query.services_id);
     })
     .catch((error) => {
       console.log(error);
