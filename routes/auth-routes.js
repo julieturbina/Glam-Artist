@@ -19,6 +19,12 @@ authRoutes.get("/auth/facebook/callback", passport.authenticate("facebook", {
   failureRedirect: "/"
 }));
 
+//LOGOUT ROUTE ===
+
+authRoutes.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
 // Signup Route ===
 authRoutes.get("/signup", (req, res, next) => {
@@ -108,6 +114,12 @@ authRoutes.post("/login", (req, res, next) => {
         res.render("private", { user: req.user });
       });
 
+      authRoutes.get("/logout", (req, res) => {
+        req.logout();
+        res.redirect("/");
+      });
+
+
       //Logout Route
      
 
@@ -116,14 +128,15 @@ authRoutes.post("/login", (req, res, next) => {
       //   res.redirect("/index");
       // });
 
-      authRoutes.get("/logout", (req, res) => {
-        req.logout();
-        res.redirect("/login");
-      });
+      // authRoutes.get("/logout", (req, res) => {
+      //   req.logout();
+      //   res.redirect("/login");
+      // });
 
-      authRoutes.get("/logout", (req, res) => {
-        res.render("index");
-      });
+      // authRoutes.get("/logout", (req, res) => {
+      //   req.logout();
+      //   res.redirect("/login");
+      // });
       // authRoutes.post("/logout", passport.authenticate("local", 
       // {
       //   successRedirect: "/private",

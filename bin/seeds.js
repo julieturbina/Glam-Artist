@@ -10,70 +10,64 @@ mongoose.connect(`mongodb://localhost/${dbtitle}`);
 const services = [
   {
     name: "Botox Injections",
-    image: "../images/botox.png",
-    provider: [ "Heidi Schuler"],
-    review: "Fantastic experience.",
+    provider: "Heidi Schuler",
   },
   {
     name: " Dermal Fillers",
-    pictureUrl: "../images/36943-28419-injectionjpgjpg.jpg.660x0_q80_crop-scale_upscale.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Great experience.",
+    provider: "Juliet Urbina",
   },
   {
     name: "Vampire Facial",
-    image: "../images/vampire-facial-facelift.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Amazing.",
+    provider: "Juliet Urbina",
   },
-  {
-    name: "Dermabrasion",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Wonderful.",
-  },
-  {
-    name: "Permanent Makeup",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Eyelash Extensions",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Microblading Eyebrow Tattoo",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Juvederm Filler",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Restylane Fillers",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Sculptra Fillers",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
-  {
-    name: "Liquid Facelift",
-    pictureUrl: "../images/facials-1.jpg",
-    provider: [ "Juliet Urbina"],
-    review: "Fantastic experience.",
-  },
+  // {
+  //   name: "Dermabrasion",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Wonderful.",
+  // },
+  // {
+  //   name: "Permanent Makeup",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Eyelash Extensions",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Microblading Eyebrow Tattoo",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Juvederm Filler",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Restylane Fillers",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Sculptra Fillers",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
+  // {
+  //   name: "Liquid Facelift",
+  //   pictureUrl: "../images/facials-1.jpg",
+  //   provider: [ "Juliet Urbina"],
+  //   review: "Fantastic experience.",
+  // },
 
 ];
 

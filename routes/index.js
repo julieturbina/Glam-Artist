@@ -61,18 +61,12 @@ router.get('/services/:id', (req, res, next) => {
   //ADD SERVICES USING SERVICES-ADD FORM
 
   router.get('/services/add', (req, res, next) => {
-    Book.findOne({_id: req.query.book_id})
-    .then((services) => {
       res.render("services-add", {services});
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   });
 
   router.post('services/add', (req, res, next) => {
-    const { name, provider, photo } = req.body;
-    const newServices = new Services({ name, provider, photo});
+    const { name, provider } = req.body;
+    const newServices = new Services({ name, provider });
     newServices.save()
     .then((services) => {
       res.redirect('services');
@@ -95,8 +89,8 @@ router.get('/services/:id', (req, res, next) => {
   });
   
   router.post('/services/edit', (req, res, next) => {
-    const { name, provider, photo } = req.body;
-    Services.update({_id: req.query.services_id}, { $set: {name, provider, photo }}, { new: true })
+    const { name, provider } = req.body;
+    Services.update({_id: req.query.services_id}, { $set: {name, provider }}, { new: true })
     .then((services) => {
       res.redirect('/services');
     })
@@ -122,6 +116,8 @@ router.get('/services/:id', (req, res, next) => {
       console.log(error);
     });
   });
+
+
 
   router.get('/review/add', (req, res, next) => {
     res.render("services-review");
