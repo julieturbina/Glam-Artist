@@ -4,7 +4,6 @@ const ObjectId = Schema.ObjectId;
 
 const servicesSchema = new Schema({
   name: "String",
-  image: "String",
   provider: "String",
  
 }, {

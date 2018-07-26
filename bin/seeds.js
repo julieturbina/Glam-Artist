@@ -1,11 +1,12 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Services = require('../models/services');
 const Provider = require('../models/provider');
 // const Review   = require('../models/review.js');
 const User     = require('../models/user');
 
-const dbtitle = 'glam-artist';
-mongoose.connect(`mongodb://localhost/${dbtitle}`);
+// const dbtitle = 'glam-artist';
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
 
 const services = [
   {
@@ -22,7 +23,7 @@ const services = [
   },
   {
     name: "Dermabrasion",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
   {
     name: "Permanent Makeup",
@@ -30,30 +31,33 @@ const services = [
   },
   {
     name: "Eyelash Extensions",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
 
   },
   {
     name: "Microblading Eyebrow Tattoo",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
   {
     name: "Juvederm Filler",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
   {
     name: "Restylane Fillers",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
   {
     name: "Sculptra Fillers",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
   {
     name: "Liquid Facelift",
-    provider: [ "Juliet Urbina"],
+    provider: "Juliet Urbina",
   },
-
+  {
+    name: "Other Things",
+    provider: "Juliet Urbina",
+  },
 ];
 
 Services.create(services, (err) => {

@@ -65,7 +65,7 @@ router.get('/services/:id', (req, res, next) => {
   //EDIT EXISTING SERVICES USING SERVICES-UPDATE FORM
 
   router.get('/services/edit', (req, res, next) => {
-    Book.findOne({_id: req.query.book_id});
+    Services.findOne({_id: req.query.service_id});
     // .then((services) => {
       res.render("services-update", {services});
     // })
@@ -92,16 +92,14 @@ router.get('/services/:id', (req, res, next) => {
   });
   
   router.post('/provider/add', (req, res, next) => {
-    const { firstName, lastName, education, experience, pictureUrl } = req.body;
-    const newProvider = new Provider({ firstName, lastName, education, experience, pictureUrl});
+    const { firstName, lastName, education, experience } = req.body;
+    const newProvider = new Provider({ firstName, lastName, education, experience });
     console.log('req.body ', req.body);
     newProvider.save()
     .then((services) => {
-      console.log('services', services);
       res.redirect('/private');
     })
     .catch((error) => {
-      console.log(error);
       res.redirect('/');      
     });
   });
