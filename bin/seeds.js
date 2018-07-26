@@ -6,7 +6,12 @@ const Provider = require('../models/provider');
 const User     = require('../models/user');
 
 // const dbtitle = 'glam-artist';
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
+.then(() => {
+  console.log('Connected to Mongo!');
+}).catch(err => {
+  console.error('Error connecting to mongo', err);
+});
 
 const services = [
   {
