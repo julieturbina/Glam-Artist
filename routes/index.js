@@ -14,13 +14,10 @@ router.get('/', (req, res, next) => {
 
 // ADD A SERVICE ROUTE ===
 
-// router.get('/services/add', (req, res, next) => {
-//   res.render("services-add");
-// });
 
-router.get('/services', (req, res, next) => {
-  res.render("services");
-});
+// router.get('/services', (req, res, next) => {
+//   res.render("services");
+// });
 
 router.get('/services', (req, res, next) => {
   Services.find()
@@ -34,26 +31,23 @@ router.get('/services', (req, res, next) => {
 
 router.get('/services/:id', (req, res, next) => {
   let servicesId = req.params.id;
-  // if (!/^[0-9a-fA-F]{24}$/.test(servicesId)) { 
-  //   return res.status(404).render('not-found');
-  // }
+  if (!/^[0-9a-fA-F]{24}$/.test(servicesId)) { 
+    return res.status(404).render('not-found');
+  }
   Services.findOne({'_id': servicesId})
-  // .populate('provider')
+  .populate('provider')
   .then(services => {
     if (!services) {
       return res.status(404).render('not-found');
     }
       res.render("services-detail", { services });
     })
-    // .catch(next);
-    .catch(error => {
-    console.log(error);
+    .catch(next);
   });
-  });
-  //ADD SERVICES USING SERVICES-ADD FORM
 
-  router.get('/services-add', (req, res, next) => {
-      res.render("services-add", {services});
+
+  router.get('/services/add', (req, res, next) => {
+    res.render("services-add");
   });
 
   router.post('services/add', (req, res, next) => {
@@ -68,10 +62,10 @@ router.get('/services/:id', (req, res, next) => {
     });
   });
   
-  //EDIT EXISTING SERVICES USING SERVICES-UPDATE FORM
+  //!!!!!!!!!!EDIT EXISTING SERVICES USING SERVICES-UPDATE FORM ====Review !!!!!!!!!!!!
 
   router.get('/services/edit', (req, res, next) => {
-    Services.findOne({_id: req.query.service_id});
+    Services.findOne({_id: req.query.services_id});
     // .then((services) => {
       res.render("services-update", {services});
     // })
@@ -79,12 +73,24 @@ router.get('/services/:id', (req, res, next) => {
     //   console.log(error);
     // });
   });
+
+  router.post("/services", (req, res, next) => {
+    //get data from form and add to services array
+    const name = req.body.name;
+    const provider = req.body.provider;
+    const newServices = {name:name, provider:provider };
+    services.push(newServices);
+    //redirect back to services page
+    res.redirect("/services");
+  });
+
+  
   
   router.post('/services/edit', (req, res, next) => {
     const { name, provider } = req.body;
     Services.update({_id: req.query.services_id}, { $set: {name, provider }}, { new: true })
     .then((services) => {
-      res.redirect('/services');
+      res.redirect('/private');
     })
     .catch((error) => {
       console.log(error);
@@ -97,10 +103,10 @@ router.get('/services/:id', (req, res, next) => {
     res.render("provider-add");
   });
   
-  router.post('/provideradd', (req, res, next) => {
+  router.post('/provider/add', (req, res, next) => {
     const { firstName, lastName, education, experience } = req.body;
     const newProvider = new Provider({ firstName, lastName, education, experience });
-    console.log('req.body ', req.body);
+    // console.log('req.body ', req.body);
     newProvider.save()
     .then((services) => {
       res.redirect('/private');
@@ -112,20 +118,54 @@ router.get('/services/:id', (req, res, next) => {
 
 // PROVIDER INFORMATION ===
 
-  router.get('/provider-info', (req, res, next) => {
-    res.render("provider-info");
-  });
-  
-  router.post('/provider-info', (req, res, next) => {
+router.get('/review/add', (req, res, next) => {
+  res.render("services-review");
+});
+
+router.post('/reviews/add', (req, res, next) => {
     const { user, comments } = req.body;
     Services.update({ _id: req.query.services_id }, { $push: { reviews: { user, comments }}})
     .then(services => {
-      res.redirect('/provider-info/' + req.query.services_id);
+      res.redirect('/services/' + req.query.services_id);
     })
     .catch((error) => {
       console.log(error);
     });
   });
+  //Get fashion page===
+router.get('/fashion', (req, res, next) => {
+  res.render('fashion');
+});
+
+//Get makeup page===
+router.get('/makeup', (req, res, next) => {
+  res.render('makeup');
+});
+
+//Get Services ID
+router.get('/services-update', (req, res, next) => {
+  res.render('services-update');
+});
+
+//Get Services Add
+router.get('/services-add', (req, res, next) => {
+  res.render('services-add');
+});
+
+//Get Services Detail
+router.get('/services-review', (req, res, next) => {
+  res.render('services-review');
+});
+
+//Get Services Provider Add
+router.get('/provider-add', (req, res, next) => {
+  res.render('provider-add');
+});
+
+//Get Services Provider Add
+router.get('/private', (req, res, next) => {
+  res.render('private');
+});
 
 
 module.exports = router;

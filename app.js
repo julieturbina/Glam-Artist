@@ -167,11 +167,6 @@ hbs.registerPartials(__dirname + '/views/partials');
    res.render('index');
  });
 
- // Get username ===
-
- app.get('/users/:username', function (req, res) {
-  res.send(req.params);
-});
  
 //Get services page===
 
@@ -179,56 +174,49 @@ hbs.registerPartials(__dirname + '/views/partials');
 //  res.render("services", {services:services}); 
 //  });
 
- app.get("/services/new", (req, res) => {
-  res.render("newServices");
-});
+//  app.get("/services", (req, res) => {
 
-app.post("/services", (req, res, next) => {
-  //get data from form and add to services array
-  const name = req.body.name;
-  const provider = req.body.provider;
-  const newServices = {name:name, provider:provider };
-  services.push(newServices);
-  //redirect back to services page
-  res.redirect("/services");
-});
+//   res.render("services", {services:services}); 
+// });
 
 
 
-//Get fashion page===
-app.get('/fashion', (req, res, next) => {
-  res.render('fashion');
-});
 
-//Get makeup page===
-app.get('/makeup', (req, res, next) => {
-  res.render('makeup');
-});
 
-//Get Services ID
-app.get('/services-update', (req, res, next) => {
-  res.render('services-update');
-});
+// //Get fashion page===
+// app.get('/fashion', (req, res, next) => {
+//   res.render('fashion');
+// });
 
-//Get Services Add
-app.get('/services-add', (req, res, next) => {
-  res.render('services-add');
-});
+// //Get makeup page===
+// app.get('/makeup', (req, res, next) => {
+//   res.render('makeup');
+// });
 
-//Get Services Detail
-app.get('/services-review', (req, res, next) => {
-  res.render('services-review');
-});
+// //Get Services ID
+// app.get('/services-update', (req, res, next) => {
+//   res.render('services-update');
+// });
 
-//Get Services Provider Add
-app.get('/provider-add', (req, res, next) => {
-  res.render('provider-add');
-});
+// //Get Services Add
+// app.get('/services-add', (req, res, next) => {
+//   res.render('services-add');
+// });
 
-//Get Services Provider Add
-app.get('/private', (req, res, next) => {
-  res.render('private');
-});
+// //Get Services Detail
+// app.get('/services-review', (req, res, next) => {
+//   res.render('services-review');
+// });
+
+// //Get Services Provider Add
+// app.get('/provider-add', (req, res, next) => {
+//   res.render('provider-add');
+// });
+
+// //Get Services Provider Add
+// app.get('/private', (req, res, next) => {
+//   res.render('private');
+// });
 
 /*
 //To NOT add the layout to he home page===

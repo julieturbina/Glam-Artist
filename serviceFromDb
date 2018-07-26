@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5b56374dfde59be88220ed2c"},"updated_at":{"$date":"2018-07-23T20:15:09.256Z"},"created_at":{"$date":"2018-07-23T20:15:09.256Z"},"name":"Botox Injections","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b56374dfde59be88220ed2d"},"updated_at":{"$date":"2018-07-23T20:15:09.259Z"},"created_at":{"$date":"2018-07-23T20:15:09.259Z"},"name":"Dermal Fillers","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b56374dfde59be88220ed2e"},"updated_at":{"$date":"2018-07-23T20:15:09.260Z"},"created_at":{"$date":"2018-07-23T20:15:09.260Z"},"name":"Vampire Facial","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b5637b56931dfe8abfde0a4"},"updated_at":{"$date":"2018-07-23T20:16:53.606Z"},"created_at":{"$date":"2018-07-23T20:16:53.606Z"},"name":"Dermabrasion","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b5637b56931dfe8abfde0a5"},"updated_at":{"$date":"2018-07-23T20:16:53.610Z"},"created_at":{"$date":"2018-07-23T20:16:53.610Z"},"name":"Permanent Makeup","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b5637b56931dfe8abfde0a6"},"updated_at":{"$date":"2018-07-23T20:16:53.610Z"},"created_at":{"$date":"2018-07-23T20:16:53.610Z"},"name":"Eyelash Extension","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b56415a9563d8e8f1bd9908"},"updated_at":{"$date":"2018-07-23T20:58:02.151Z"},"created_at":{"$date":"2018-07-23T20:58:02.151Z"},"name":"Microblading Eyebrow Tattoo","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b56415a9563d8e8f1bd990a"},"updated_at":{"$date":"2018-07-23T20:58:02.154Z"},"created_at":{"$date":"2018-07-23T20:58:02.154Z"},"name":"Juvederm Filler","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b56415a9563d8e8f1bd9909"},"updated_at":{"$date":"2018-07-23T20:58:02.153Z"},"created_at":{"$date":"2018-07-23T20:58:02.153Z"},"name":"Restylane Fillers","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b5646e3bd06cae90893ae68"},"updated_at":{"$date":"2018-07-23T21:21:39.853Z"},"created_at":{"$date":"2018-07-23T21:21:39.853Z"},"name":"Sculptra Fillers","provider":"Jules","__v":0}
+{"_id":{"$oid":"5b564a058aeac9e9f6564ba2"},"updated_at":{"$date":"2018-07-23T21:35:01.143Z"},"created_at":{"$date":"2018-07-23T21:35:01.143Z"},"name":"Liquid Facelift","provider":"Jules","__v":0}
