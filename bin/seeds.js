@@ -6,7 +6,7 @@ const Provider = require('../models/provider');
 const User     = require('../models/user');
 
 // const dbtitle = 'glam-artist';
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
+mongoose.connect("mongodb://heroku_zw8hm5fr:beee3ptkbgihpt9k7letaroohi@ds253891.mlab.com:53891/heroku_zw8hm5fr", {useMongoClient: true});
 
 const services = [
   {
