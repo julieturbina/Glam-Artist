@@ -167,34 +167,33 @@ hbs.registerPartials(__dirname + '/views/partials');
    res.render('index');
  });
 
- //Get services page===
-// app.get('/fashion', (req, res, next) => {
-//   res.render('fashion');
-// });
+ // Get username ===
 
-
- /*
+ app.get('/users/:username', function (req, res) {
+  res.send(req.params);
+});
+ 
 //Get services page===
 
-app.get('/services', (req, res, next) => {
- res.render("services", {services:services}); 
+// app.get('/services', (req, res, next) => {
+//  res.render("services", {services:services}); 
+//  });
+
+ app.get("/services/new", (req, res) => {
+  res.render("newServices");
 });
 
 app.post("/services", (req, res, next) => {
   //get data from form and add to services array
   const name = req.body.name;
   const provider = req.body.provider;
-  const photo = req.body.photo;
-  const newServices = {name:name, provider:provider, photo:photo};
+  const newServices = {name:name, provider:provider };
   services.push(newServices);
   //redirect back to services page
   res.redirect("/services");
 });
 
-app.get("/services/new", (req, res) => {
-  res.render("newServices");
-});
-*/
+
 
 //Get fashion page===
 app.get('/fashion', (req, res, next) => {
@@ -243,7 +242,7 @@ app.get('/index', (req, res, next) => {
 */
 
 // default value for title local
-app.locals.title = 'Glam Artist - by Juliet Urbina';
+app.locals.title = 'Glam Artist';
 
 
 const index = require('./routes/index');

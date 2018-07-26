@@ -14,8 +14,12 @@ router.get('/', (req, res, next) => {
 
 // ADD A SERVICE ROUTE ===
 
-router.get('/services/add', (req, res, next) => {
-  res.render("services-add");
+// router.get('/services/add', (req, res, next) => {
+//   res.render("services-add");
+// });
+
+router.get('/services', (req, res, next) => {
+  res.render("services");
 });
 
 router.get('/services', (req, res, next) => {
@@ -30,23 +34,25 @@ router.get('/services', (req, res, next) => {
 
 router.get('/services/:id', (req, res, next) => {
   let servicesId = req.params.id;
-  if (!/^[0-9a-fA-F]{24}$/.test(servicesId)) { 
-    return res.status(404).render('not-found');
-  }
+  // if (!/^[0-9a-fA-F]{24}$/.test(servicesId)) { 
+  //   return res.status(404).render('not-found');
+  // }
   Services.findOne({'_id': servicesId})
-  .populate('provider')
+  // .populate('provider')
   .then(services => {
     if (!services) {
       return res.status(404).render('not-found');
     }
       res.render("services-detail", { services });
     })
-    .catch(next);
+    // .catch(next);
+    .catch(error => {
+    console.log(error);
   });
-
+  });
   //ADD SERVICES USING SERVICES-ADD FORM
 
-  router.get('/services/add', (req, res, next) => {
+  router.get('/services-add', (req, res, next) => {
       res.render("services-add", {services});
   });
 
@@ -87,11 +93,11 @@ router.get('/services/:id', (req, res, next) => {
 
   //ADD PROVIDER USING PROVIDER-ADD FORM ======(tested=working)======
   
-  router.get('/provider/add', (req, res, next) => {
+  router.get('/provider-add', (req, res, next) => {
     res.render("provider-add");
   });
   
-  router.post('/provider/add', (req, res, next) => {
+  router.post('/provideradd', (req, res, next) => {
     const { firstName, lastName, education, experience } = req.body;
     const newProvider = new Provider({ firstName, lastName, education, experience });
     console.log('req.body ', req.body);

@@ -1,33 +1,32 @@
 <br>
 <header>
-      <header>
-      <a class="btn btn-primary btn-large" href="/logout">Logout</a>
-
-
+      <button class="login"><a href="/logout">Logout</a></button>
+</header>
+<hr>
 <br> 
-
+<div>
 <h1>Add New Provider</h1>
 {{!-- <div class="cards-container"> --}}
         
-            <form action="/provider/add" method="post">
-            <label for="">First Name:</label>
-            <input type="text" name="firstName">
+        <form action="/provider/add" method="POST">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName">
 
-            <label for="">Last Name:</label>
-            <input type="text" name="lastName">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName">
 
-            <label for="">Education:</label>
-            <input type="text" name="eduation">
-        
-        <div>
-            <label for="">Experience:</label>
-            <input type="text" name="experience">
-        </div>
-        
-        <div>
-            <button class="login">Submit</button>
-        </div>
-            </form>
+                <label for="education">Education:</label>
+                <input type="text" name="eduation">
+            
+            <div>
+                <label for="experience">Experience:</label>
+                <input type="text" name="experience">
+            </div>
+            
+            <div>
+                <button class="login">Submit</button>
+            </div>
+        </form>
 </div>
 
 <br>
