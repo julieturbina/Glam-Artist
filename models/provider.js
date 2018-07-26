@@ -2,18 +2,11 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const providerSchema = new Schema({
-  firstName: "String",
-  lastName: "String",
-  education: "String",
-  experience: "String",
-  pictureUrl: "String",
-  phone: Number,
-  address: {
-    street: "String",
-    City: "String",
-    State: "String",
-    Zip: Number
-  }
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  education: { type: String, required: true },
+  experience: String
+  // phone: Number,
 });
 
 const Provider = mongoose.model("Provider", providerSchema);

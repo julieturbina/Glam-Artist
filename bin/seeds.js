@@ -20,54 +20,39 @@ const services = [
     name: "Vampire Facial",
     provider: "Juliet Urbina",
   },
-  // {
-  //   name: "Dermabrasion",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Wonderful.",
-  // },
-  // {
-  //   name: "Permanent Makeup",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Eyelash Extensions",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Microblading Eyebrow Tattoo",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Juvederm Filler",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Restylane Fillers",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Sculptra Fillers",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
-  // {
-  //   name: "Liquid Facelift",
-  //   pictureUrl: "../images/facials-1.jpg",
-  //   provider: [ "Juliet Urbina"],
-  //   review: "Fantastic experience.",
-  // },
+  {
+    name: "Dermabrasion",
+    provider: [ "Juliet Urbina"],
+  },
+  {
+    name: "Permanent Makeup",
+    provider: "Juliet Urbina",
+  },
+  {
+    name: "Eyelash Extensions",
+    provider: [ "Juliet Urbina"],
+
+  },
+  {
+    name: "Microblading Eyebrow Tattoo",
+    provider: [ "Juliet Urbina"],
+  },
+  {
+    name: "Juvederm Filler",
+    provider: [ "Juliet Urbina"],
+  },
+  {
+    name: "Restylane Fillers",
+    provider: [ "Juliet Urbina"],
+  },
+  {
+    name: "Sculptra Fillers",
+    provider: [ "Juliet Urbina"],
+  },
+  {
+    name: "Liquid Facelift",
+    provider: [ "Juliet Urbina"],
+  },
 
 ];
 

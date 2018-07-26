@@ -6,14 +6,7 @@ const servicesSchema = new Schema({
   name: "String",
   image: "String",
   provider: "String",
-  // {
-  //   firstName: "String",
-  //   lastName: "String",
-  //   education: "String",
-  //   experience: "String",
-  //   pictureUrl: "String",
-  //   phone: Number
-  // }
+ 
 }, {
   timestamps: {
     createdAt: "created_at",

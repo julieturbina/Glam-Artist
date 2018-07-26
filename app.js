@@ -35,16 +35,13 @@ const salt  = bcrypt.genSaltSync(saltRounds);
 const hash1 = bcrypt.hashSync(plainPassword1, salt);
 const hash2 = bcrypt.hashSync(plainPassword2, salt);
 
-console.log("Hash 1 -", hash1);
-console.log("Hash 2 -", hash2);
-
 const MongoStore = require('connect-mongo')(session);
 
 ////auth transfer end==================================
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/glam-artist', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!');
   }).catch(err => {

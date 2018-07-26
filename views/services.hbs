@@ -10,17 +10,19 @@
     </div>
 
 
-        {{!-- <div class="cards-container">
-           <div class="row">
-  <div class="col-sm-3"> --}}
-    <div class="card">
+
+             
+      <div class="cards-container">
+        <div class="card" style="width: 10rem;">
               {{#each services}}
-                    {{!-- <img class="card-img-top" src="../images/facials.jpg" alt "Botox" > --}}
-                <div class="card-body">
+                  {{!-- <div class="my-Picture"> --}}
+                    
+                  </div>
                     <h5 class="card-title"><a href="service/{{this._id}}">{{this.name}}</a></h5>
                     <p class="card-text"><a href="service/{{this._id}}">{{this.provider}}</a></p>
-                {{/each}}
-            </div>
-            </div>
-        </div>
+                  </div>
+               {{/each}}
+            <hr>
+               
+    
 
