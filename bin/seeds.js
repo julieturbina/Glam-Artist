@@ -4,7 +4,7 @@ const Services = require('../models/services');
 const Provider = require('../models/provider');
 // const Review   = require('../models/review.js');
 const User     = require('../models/user');
-
+console.log('heyyyy')
 // const dbtitle = 'glam-artist';
 mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 .then(() => {
