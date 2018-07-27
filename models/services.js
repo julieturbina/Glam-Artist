@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
-mongoose.connect("mongodb://localhost/glam-artist");
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
 
 const servicesSchema = new mongoose.Schema({
   name: "String",
