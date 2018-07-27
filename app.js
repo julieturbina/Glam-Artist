@@ -167,56 +167,7 @@ hbs.registerPartials(__dirname + '/views/partials');
    res.render('index');
  });
 
- 
-//Get services page===
 
-// app.get('/services', (req, res, next) => {
-//  res.render("services", {services:services}); 
-//  });
-
-//  app.get("/services", (req, res) => {
-
-//   res.render("services", {services:services}); 
-// });
-
-
-
-
-
-// //Get fashion page===
-// app.get('/fashion', (req, res, next) => {
-//   res.render('fashion');
-// });
-
-// //Get makeup page===
-// app.get('/makeup', (req, res, next) => {
-//   res.render('makeup');
-// });
-
-// //Get Services ID
-// app.get('/services-update', (req, res, next) => {
-//   res.render('services-update');
-// });
-
-// //Get Services Add
-// app.get('/services-add', (req, res, next) => {
-//   res.render('services-add');
-// });
-
-// //Get Services Detail
-// app.get('/services-review', (req, res, next) => {
-//   res.render('services-review');
-// });
-
-// //Get Services Provider Add
-// app.get('/provider-add', (req, res, next) => {
-//   res.render('provider-add');
-// });
-
-// //Get Services Provider Add
-// app.get('/private', (req, res, next) => {
-//   res.render('private');
-// });
 
 /*
 //To NOT add the layout to he home page===
@@ -241,17 +192,3 @@ app.use('/', authRoutes);
 
 
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
-
-

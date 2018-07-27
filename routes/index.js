@@ -19,6 +19,8 @@ router.get('/', (req, res, next) => {
 //   res.render("services");
 // });
 
+
+
 router.get('/services', (req, res, next) => {
   Services.find()
     .then(services => {
