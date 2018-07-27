@@ -4,7 +4,7 @@ const Services = require('../models/services');
 const Provider = require('../models/provider');
 // const Review   = require('../models/review.js');
 const User     = require('../models/user');
-console.log('heyyyy')
+console.log('heyyyy');
 // const dbtitle = 'glam-artist';
 mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 .then(() => {
@@ -21,6 +21,7 @@ const services = [
   {
     name: " Dermal Fillers",
     provider: "Juliet Urbina",
+    // image: /botox_injections.jpg
   },
   {
     name: "Vampire Facial",
@@ -72,6 +73,8 @@ Services.create(services, (err) => {
   console.log(`Created ${services.length} services`);
   mongoose.connection.close();
 });
+
+module.exports = seedDB;
 
 // const createProvider = services.map(services => {
 //   const newProvider = new Provider(services.provider);

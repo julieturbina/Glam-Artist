@@ -8,21 +8,20 @@
         <a class="btn btn-primary btn-large" href="/provider-info">Provider Information</a>
       </header> 
     </div>
-
-
-
-             
-      <div class="cards-container">
-        <div class="card" style="width: 10rem;">
-              {{#each services}}
-                  {{!-- <div class="my-Picture"> --}}
-                    
-                  </div>
-                    <h5 class="card-title"><a href="service/{{this._id}}">{{this.name}}</a></h5>
-                    <p class="card-text"><a href="service/{{this._id}}">{{this.provider}}</a></p>
-                  </div>
-               {{/each}}
+          
             <hr>
-               
-    
 
+    <div class="card-columns">
+                {{#each services}}
+              <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{this.image}}">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="service/{{this._id}}">{{this.name}}</a></h5>
+                         <p class="card-text"><a href="service/{{this._id}}">{{this.provider}}</a></p>
+                        <a href="/makeup" class="btn btn-primary">Makeup Artist</a>
+                    </div>
+                    </div>
+                     {{/each}}
+    </div>
+               
+  

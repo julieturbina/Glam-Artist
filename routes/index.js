@@ -42,7 +42,7 @@ router.get('/services/:id', (req, res, next) => {
     if (!services) {
       return res.status(404).render('not-found');
     }
-      res.render("services-detail", { services });
+      res.render("services", { services });
     })
     .catch(next);
   });
@@ -67,13 +67,13 @@ router.get('/services/:id', (req, res, next) => {
   //!!!!!!!!!!EDIT EXISTING SERVICES USING SERVICES-UPDATE FORM ====Review !!!!!!!!!!!!
 
   router.get('/services/edit', (req, res, next) => {
-    Services.findOne({_id: req.query.services_id});
-    // .then((services) => {
+    Services.findOne({_id: req.query.services_id})
+    .then((services) => {
       res.render("services-update", {services});
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   });
 
   router.post("/services", (req, res, next) => {
